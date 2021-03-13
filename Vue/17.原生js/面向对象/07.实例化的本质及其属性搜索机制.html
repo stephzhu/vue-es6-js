@@ -15,12 +15,14 @@
 <p>实例化的本质是实例的拷贝原理，将构造函数中的属性拷贝一份,不会拷贝原型对象上的属性</p>
 属性搜索机制
 
+
 <script>
 function Foo() {
 
 }
 var foo=new Foo();
-console.log(foo.constructor);
+console.log(Foo.constructor);          //f function (){}
+console.log(foo.constructor);          //f Foo(){}
 </script>
 </body>
 </html>
