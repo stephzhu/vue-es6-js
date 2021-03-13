@@ -5,16 +5,6 @@
     <title>Title</title>
 </head>
 <body>
-抽象具体化
-对象是抽象的
-实例是具体的
-
-不是使用抽象的东西，只能用实例
-
-
-架构：
-宏观分析需要哪些对象，微观分析每一个对象需要哪些属性和方法
-宏观实现公里东方闪电发呆积分看。
 <div id="id"></div>
 <script>
     function Product(name, price) {
@@ -32,17 +22,30 @@
             str += this.name
             str += "</div>"
             str += "<p>"
-            str += this.name+"即将发布"
+            str += this.name+':'+ this.price+'元'+"即将发布"
             str += "</p>"
             return str
         }
     }
-    var iphone = new Product('iphone', 12);
-    iphone.getPrice();
 
+
+    var iphone1 = new Product();
+    iphone1.name='iphone7';
+    iphone1.price=2299;
+
+    var iphone2 = new Product('iphone8',3200);
+    var iphone3 = new Product('iphone10',2409);
+    var iphone4 = new Product('iphone11',5900);
+
+
+
+    var arr=[iphone1,iphone2,iphone3,iphone4]
     var body=document.getElementsByTagName('div')[0];
-    var str=iphone.getStr();
-    console.log(str);
+    var str='';
+    for (var i = 0; i <arr.length ; i++) {
+       str+=arr[i].getStr()
+    }
+
     body.innerHTML=str;
 </script>
 </body>
