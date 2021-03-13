@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        p
+        {
+            color: green ;
+        }
+    </style>
+</head>
+<body>
+<p>实例化的本质</p>
+<p>实例化的本质是实例的拷贝原理，将构造函数中的属性拷贝一份,不会拷贝原型对象上的属性</p>
+属性搜索机制
+
+<script>
+function Foo() {
+
+}
+var foo=new Foo();
+console.log(foo.constructor);
+</script>
+</body>
+</html>

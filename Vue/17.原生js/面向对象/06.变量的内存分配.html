@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        p
+        {
+            color: green ;
+        }
+    </style>
+</head>
+<body>
+
+<p>申明变量就是分配内存的过程</p>
+
+指针的概念：
+当定义一个变量的时候，会在内存中开辟一片区域来保存这个值
+每个内存区域都有一个地址，通过地址来访问这个值
+
+对象是如何保存的
+声明对象会开辟两篇区域，一块存储变量名称（地址），另一块区域存储实例的值
+<script>
+    //类型检测
+    var und=toString.call(undefined);
+    console.log(und);
+</script>
+</body>
+</html>
