@@ -1,0 +1,59 @@
+
+<!--
+ * @Author: your name
+ * @Date: 2021-02-25 15:46:40
+ * @LastEditTime: 2021-02-27 09:23:12
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: \Vue\Vue\09.v-model.htm\01.v-model基本使用.htm
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <div id="app">
+        父组件向子组件传递，用props
+        子组件向父组件传递，通过事件
+      <mydiv2></mydiv2>
+      <mydiv1></mydiv1>
+    </div>
+    <hr>
+    
+    <script src="../../vue.js"></script>
+    <script>
+        //   1.创建组件构造器
+        const cpnc1=Vue.extend({
+            template:`
+            <p>内容1</p>
+            `
+        });
+
+        const cpnc2=Vue.extend({
+            template:`
+            <p>内容2</p>
+            <mydiv1></mydiv1>
+            `,
+            components:{
+               mydiv1:cpnc1,
+            }
+        });
+
+        // 2.注册组件
+        // Vue.component('mydiv',cpnC);   //全局组件
+
+        const app=new Vue({
+            el:'#app',
+            components:{
+                mydiv2:cpnc2,
+                // mydiv1:cpnc1,
+            },
+        })
+    </script>
+</body>
+</html>

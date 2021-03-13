@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>let和const</title>
+</head>
+<body>
+
+promise:
+
+异步编程的一种解决方案，比回调函数和事件能更加优雅的表达异步的一个对象
+可以用同步的形式表达异步操作
+
+
+let
+1.有块级作用域（函数也有作用域），块级作用域必须有大括号
+2.for循环中声明的let变量和循环体内的变量是独立的作用域
+3.不存在变量提升，必须先声明再使用，不可重复声明
+4.闭包：匿名立即执行函数，相当于块级作用域
+
+const
+1.常量，一旦声明不能改变，不能改变的是地址，不是值
+2.作用域和let相同
+3.let和const声明的全局变量不能通过window获取
+<script>
+
+    //let有块级作用域
+    // {
+    //     let a='foo'
+    //     console.log(a);
+    //     console.log(111);
+    // }
+    //
+    // console.log(a);
+
+    // for和if没有块级作用域
+    // for(var i=0;i<5;i++){
+    //
+    // }
+    // console.log(i)
+
+    //函数有作用域
+    // function foo() {
+    //     let a='foo'
+    //     console.log(a);
+    // }
+    // foo()
+    // console.log(a);
+    // let i=0;
+    //   for (let i = 0; i < 3; i++) {
+    //       let i;
+    //       console.log(i);
+    //       // let i = 'abc';
+    //       // console.log(i);
+    //   }
+    // ----------------------
+    // try {
+    //     let a = 'foo'
+    //     console.log(a);
+    //     console.log(111);
+    // } catch (e) {
+    //
+    // }
+    // console.log(a);
+
+    // let b = 1;
+    // console.log(window.b); // undefined
+
+</script>
+</body>
+</html>

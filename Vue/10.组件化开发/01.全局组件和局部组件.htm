@@ -1,0 +1,59 @@
+<!--
+ * @Author: your name
+ * @Date: 2021-02-25 15:46:40
+ * @LastEditTime: 2021-02-26 10:05:03
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: \Vue\Vue\09.v-model.htm\01.v-model基本使用.htm
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <div id="app">
+        1.创建组件构造器
+        2.注册组件
+        3.使用组件
+      <mydiv></mydiv>
+    </div>
+    <hr>
+    <div id="app2">
+        <mydiv></mydiv>
+    </div>
+    <script src="../../vue.js"></script>
+    <script>
+        //   1.创建组件构造器
+        const cpnC=Vue.extend({
+            template:`
+            <p>内容1</p>
+            `
+        });
+
+        // 2.注册组件
+        Vue.component('mydiv',cpnC);   //全局组件
+        const app=new Vue({
+            el:'#app',
+            data:{
+                message:'你好',
+            },
+        })
+
+      //局部组价 
+        const app2=new Vue({
+            el:'#app2',
+            data:{
+                message:'你好',
+            },
+            components:{
+                mydiv:cpnC, 
+            },
+        })
+    </script>
+</body>
+</html>

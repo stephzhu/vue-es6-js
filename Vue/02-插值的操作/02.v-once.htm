@@ -1,0 +1,54 @@
+
+<!--
+ * @Author: your name
+ * @Date: 2021-02-17 22:58:32
+ * @LastEditTime: 2021-02-18 10:53:27
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: \Vue\第一天\插值操作\01.mastache.htm
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title> 
+<style>
+    [v-cloak]{
+        display:none;
+    }
+    </style>
+</head>
+<body>
+    <!-- v-once初次改变时起作用 -->
+
+    <div id="app" v-cloak>
+            <h1>{{firstname}}</h1>
+            <h1 v-once>{{firstname}}</h1>
+<!--        <h1 >{{firstname}}</h1>-->
+            <p v-html="url"></p>
+            <p v-text="message"></p>             
+            <p v-pre>{{message}}</p>
+            <a v-bind:href="url1">百度一下</a>
+            <a :href="url1">百度一下</a>
+    </div>
+    <script src="../../vue.js"></script>
+    <script >
+        setTimeout(()=>{
+            const app=new Vue({
+            el:'#app',
+            data:{
+                firstname:'你好',
+                url:'<a href="http://www.baidu.com">百度一下</a>',
+                message:'朱',
+                url1:'http://www.baidu.com',
+            },
+        })
+        },2000)
+            
+       
+       
+    </script>
+</body>
+</html>

@@ -1,0 +1,81 @@
+<!--
+ * @Author: your name
+ * @Date: 2021-02-18 10:54:41
+ * @LastEditTime: 2021-02-18 16:49:46
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: \Vue\第一天\插值操作\03-v-bind.htm
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .active {
+            color: red;
+        }
+
+        .normal {
+            color: #000;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <a v-bind:href="url1">百度一下</a>
+        <div class="title" v-bind:class="{active:active,normal:normal}">点我！</div>
+        <button v-on:click="btnEve">点击</button>
+        <div class="add" :class="['a','b']">ab</div>
+        <div class="add" :class="getclass()">ab1</div>
+        <ul>
+            <li v-for="(item,index) in movies">{{index}}-{{item}}</li>
+        </ul>
+
+        <!-- <ul>
+            <li v-for=" (value,index) in datalist" :class="{'active':cuerys==index}" @click='bander(index)'
+                :title="value">
+                {{index+1}} -- {{value}}
+            </li>
+        </ul>  -->
+    </div>
+    <script src="../../vue.js"></script>
+    <script>
+        const app = new Vue({
+            el: '#app',
+            data: {
+                url1: 'http://www.baidu.com',
+                active:true,
+                normal:false,
+                line:'line',
+                movies:['海尔兄弟','进击的巨人','黑猫警长'],
+            },
+            methods: {
+                btnEve: function () {
+                        this.active = !this.active;
+                },
+                getclass:function(){
+                    return this.line;
+                }
+
+            },
+
+            // data: {
+            //     cuerys:0,
+            //     datalist: ["Cgrain", "Whatarey", "小半", "陈粒"] 
+            // },
+            // methods: {
+            //     bander: function (obj) {
+            //         this.cuerys = obj; 
+            //     }
+            // }
+        })
+    </script>
+</body>
+
+</html>

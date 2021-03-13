@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<p>
+
+    箭头函数的this如何查找
+在外层作用域中一层层找
+
+</p>
+<script>
+
+
+
+    // function num(num1,num2){
+    //     return num1+num2;
+    // }
+    // console.log(num(10,10))
+    // num(20,20);
+    const mul=(num1,num2)=> console.log(this);
+    // function mul(num1,num2){
+    //     return num1*num2;
+    // }
+
+    mul(10,10)
+    console.log(mul(10,10))
+</script>
+</body>
+</html>

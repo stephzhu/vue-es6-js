@@ -1,0 +1,48 @@
+<!--
+ * @Author: your name
+ * @Date: 2021-02-25 15:46:40
+ * @LastEditTime: 2021-02-25 16:38:16
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: \Vue\Vue\09.v-model.htm\01.v-model基本使用.htm
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+      <label for="agree">
+          <input type="checkbox" name="" id="agree" v-model="isAgree">同意协议
+      </label>
+       <h3> 您选择的是{{isAgree}}</h3>
+       <button :disabled="!isAgree">下一步</button>
+
+       <hr>
+       <!-- <label for=""> -->
+           <input type="checkbox" name="" id="" value="篮球" v-model="hobbies">篮球
+           <input type="checkbox" name="" id="" value="足球" v-model="hobbies">足球
+           <input type="checkbox" name="" id="" value="排球" v-model="hobbies">排球
+<h3>您的爱好是：{{hobbies}}</h3>
+       <!-- </label> -->
+    </div>
+    <script src="../../vue.js"></script>
+    <script>
+        const app=new Vue({
+            el:'#app',
+            data:{
+                message:'你好',
+                isAgree:false,
+                hobbies:[],
+            },
+            methods: {
+               
+            },
+        })
+    </script>
+</body>
+</html>

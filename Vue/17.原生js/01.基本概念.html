@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>基本概念</title>
+</head>
+<body>
+<script>
+    // function foo() {
+    //
+    // }
+    // var null1 =null;
+    // alert(typeof foo)
+    // alert(typeof null)
+    // alert(null == undefined)   //true
+
+    //空字符串及其null布尔值换算
+    // var str = '';
+    // var car = null;
+    // if (car) {
+    //     console.log(1);
+    // } else {
+    //     console.log(2);   //返回2
+    // }
+    // if (str) {
+    //     console.log(1);
+    // } else {
+    //     console.log(2);   //返回2
+    // }
+    //浮点数精度丢失问题
+    //  var num1=0.1;
+    //  var num2=0.2;
+    //  console.log(num1+num2)
+
+
+    // var num=0;
+    // alert(num/0)
+
+    // var num='1234';
+    // num2=parseInt(num)
+    // alert(typeof num2)
+    // var num=0756;
+    // alert(num)
+    // var obj={}
+    // obj.name='niena'
+    // // obj.prototype.getnum=function(){
+    // //     console.log(this.name);
+    // // }
+    // console.log(obj);
+
+    // var i=0;
+    // do {
+    //     i += i
+    // }while(i<10)
+    // console.log(i);
+    function foo(num1, num2) {
+       console.log(arguments[0]);
+        return num1 + num2
+    }
+    foo(1,2)
+</script>
+</body>
+</html>

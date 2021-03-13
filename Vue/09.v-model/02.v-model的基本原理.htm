@@ -1,0 +1,39 @@
+<!--
+ * @Author: your name
+ * @Date: 2021-02-25 15:46:40
+ * @LastEditTime: 2021-02-25 16:07:02
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: \Vue\Vue\09.v-model.htm\01.v-model基本使用.htm
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <input type="text" name="" id="" :value="message" @input="getMessage">
+        <input type="text" name="" id="" :value="message" @input="message = $event.target.value">
+        <h3>{{message}}</h3>
+    </div>
+    <script src="../../vue.js"></script>
+    <script>
+        const app=new Vue({
+            el:'#app',
+            data:{
+                message:'你好',
+            },
+            methods: {
+                getMessage(event){
+                    this.message=event.target.value;
+
+                }
+            },
+        })
+    </script>
+</body>
+</html>

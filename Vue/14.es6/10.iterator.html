@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>iterator</title>
+</head>
+<body>
+
+原生具备 Iterator 接口的数据结构如下。
+
+Array
+Map
+Set
+String
+TypedArray
+函数的 arguments 对象
+NodeList 对象
+<script>
+    // let arr = ['a', 'b', 'c'];
+    // let iter = arr[Symbol.iterator]();
+    //
+    // iter.next() // { value: 'a', done: false }
+    // iter.next() // { value: 'b', done: false }
+    // console.log(iter.next());
+    // iter.next() // { value: 'c', done: false }
+    // iter.next() // { value: undefined, done: true
+    //
+    // function foo({a},{b}) {
+    //   var arr=this.arguments[Symbol.iterator]();
+    //     console.log(arr);
+    // }
+    // foo({age:18},{age:19})
+
+
+    let set = new Set().add('a').add('b').add('c');
+    console.log(set);
+    // set(a,b,c)
+    // console.log(set.a);
+
+    let [first, ...rest] = set;
+    console.log(rest);
+</script>
+</body>
+</html>

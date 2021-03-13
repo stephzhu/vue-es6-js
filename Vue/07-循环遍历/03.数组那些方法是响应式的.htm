@@ -1,0 +1,58 @@
+<!--
+ * @Author: zhulei
+ * @Date: 2021-02-22 21:04:57
+ * @LastEditTime: 2021-02-23 10:08:03
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: \Vue\第一天\第二天\05.用户登录案例.htm
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div id="app">
+        通过数组下标修改数组的时候，不会重新修改dom，不是响应式的
+        <ul>
+            <li v-for="item in movies" :key="item">{{item}}</li>
+        </ul>
+        <button @click="changeArr()">
+            点击改变
+        </button>
+        <hr>
+      
+    </div>
+    <script src="../../vue.js"></script>
+    <script>
+
+        const app = new Vue({
+            el: '#app',
+            data: {
+                message: '你好',
+                movies: ['海贼王', '进击的巨人', '火影忍者'],
+            },
+            methods: {
+                changeArr() {
+                    this.movies.splice(1, 1, '名侦探柯南');
+
+                    // set方法也可更改元素
+                    // vue.set(this.movies,0,'犬夜叉')
+                },
+            },
+            // computed: {
+            //     changeArr() {
+            //         this.movies.splice(1, 1, '名侦探柯南');
+            //     },
+            // }
+        })
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // var obj=new Object()
+    // console.log(obj);
+    // var arr=new Array(1,3,3)
+    // console.log(arr.toString());
+    // console.log(arr.valueOf());
+    // //返回数组长度
+    // console.log(arr.push(5));
+    // console.log(arr.length);
+    // //返回删除项目
+    // console.log(arr.pop(5));
+    // console.log(arr.length);
+    //
+    // var time=new Date()
+    // var sed=time.getTime();
+    // console.log(sed);
+    // var after=time.setTime(2021/3/14)
+    // console.log(after);
+    // var djs=(after-sed)/24/60/60;
+    // console.log(djs);
+  //caller指向调用函数本身
+  //   function outer(){
+  //       iner();
+  //       var name='nie'
+  //       // console.log(this);
+  //   }
+  //
+  //   function iner(){
+  //       iner.caller;
+  //       iner.caller.name="zhu"
+  //
+  //       console.log(iner.caller);
+  //   }
+  //
+  //   console.log(outer())
+
+    // function foo(name){
+    //     console.log(name);
+    // }
+    // foo('zhu')
+    // console.log(foo.length);
+    // console.log(foo.prototype);
+
+
+ // var arr=[1,4,55,2]
+    //    console.log(arr.toString());
+    //    for (let i = 0; i < arr.length ; i++) {
+    //
+    //    }
+    //   // var max= Math.max(arr.toString().Number())
+    //    console.log(max);
+
+    //Math.max获取最大值
+    var arr=Math.max.apply(Math,[1,4,55,2])
+    console.log(arr);
+
+    console.log(Math.random()*9+2);
+</script>
+</body>
+</html>

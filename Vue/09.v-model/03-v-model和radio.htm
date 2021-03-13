@@ -1,0 +1,39 @@
+<!--
+ * @Author: your name
+ * @Date: 2021-02-25 15:46:40
+ * @LastEditTime: 2021-02-25 16:20:04
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: \Vue\Vue\09.v-model.htm\01.v-model基本使用.htm
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+       <!-- name属性可互斥，保证radio只能选中一个, v-model可实现互斥。不用name属性-->
+        <input type="radio" name="sex" id="mile" value="男" v-model="sex">男
+        <input type="radio" name="sex" id="fmile" value="女" v-model="sex">女
+
+        <h3>您选择的性别是：{{sex}}</h3>
+    </div>
+    <script src="../../vue.js"></script>
+    <script>
+        const app=new Vue({
+            el:'#app',
+            data:{
+                message:'你好',
+                sex:'男',
+            },
+            methods: {
+               
+            },
+        })
+    </script>
+</body>
+</html>

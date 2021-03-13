@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>解构赋值</title>
+</head>
+<body>
+
+从数组和对象中提取值，对变量进行赋值，这被称为解构
+<script>
+    //数组的解构赋值
+    // let [a,b,c]=[1,2,3];
+    // console.log(a);
+
+
+    // 可省略
+    // let [,,third]=[1,2,3];
+    // console.log(third);
+
+
+    // ...省略元素，返回数组
+    // let [head,...third]=[1,2,3];
+    // console.log(third);   //[2,3]
+
+
+    // let x = 1;
+    // let y = 2;
+    //
+    // [x, y] = [y, x];
+    // console.log(x);
+    var arr=[1,2,3]
+    console.log(...arr)
+</script>
+</body>
+</html>

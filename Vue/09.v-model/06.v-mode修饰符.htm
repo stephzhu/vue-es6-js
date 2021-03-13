@@ -1,0 +1,43 @@
+<!--
+ * @Author: your name
+ * @Date: 2021-02-25 15:46:40
+ * @LastEditTime: 2021-02-25 17:03:57
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: \Vue\Vue\09.v-model.htm\01.v-model基本使用.htm
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <!-- 懒加载 -->
+        <input type="text" name="" id="" v-model.lazy="message">
+        <h3>{{message}}</h3>
+
+        <hr>
+        v-model字符串格式<br>
+        <input type="number" name="" id="" v-model.number="age">
+        您输入的类型为:{{age}}-{{typeof(age)}}
+        <hr>
+       
+        <input type="text" name="" id="" v-model.trim="message">
+        您输入的类型为:{{message}}
+    </div>
+    <script src="../../vue.js"></script>
+    <script>
+        const app=new Vue({
+            el:'#app',
+            data:{
+                message:'你好',
+                age:0,
+            },
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>proxy和reflect</title>
+</head>
+<body>
+
+箭头函数中的this指向全局变量
+<script>
+    // let target = {
+    //     name: 'Tom',
+    //     age: 24
+    // }
+    // let handler = {
+    //     get: function(target, key) {
+    //         console.log('getting '+key);
+    //         return target[key]; // 不是target.key
+    //     },
+    //     set: function(target, key, value) {
+    //         console.log('setting '+key);
+    //         target[key] = value;
+    //     }
+    // }
+    // let proxy = new Proxy(target, handler)
+    // console.log(proxy.name);     // 实际执行 handler.get
+    // console.log(proxy.age); // 实际执行 handler.set
+    //
+
+    // function sub(a, b){
+    //     return a - b;
+    // }
+    // let handler = {
+    //     apply: function(target, ctx, args){
+    //         console.log('handle apply');
+    //         return Reflect.apply(...arguments);
+    //     }
+    // }
+    // let proxy = new Proxy(sub, handler)
+    // console.log(proxy(5, 1));
+
+    function fn(){
+        var a=19
+        setTimeout(()=>{
+            // 定义时，this 绑定的是 fn 中的 this 对象
+            console.log(this.a);
+        },0)
+    }
+
+    var a = null;
+    fn()
+</script>
+</body>
+</html>

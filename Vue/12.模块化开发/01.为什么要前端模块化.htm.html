@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+1.同名变量冲突     <!--  闭包可解决,代码不可复用，其他js获取不到js中的变量-->
+2.文件相互依赖性高，高度耦合（js文件）
+
+
+模块化:
+commonJs
+AMD、CMD
+modules
+
+
+
+ES5实现模块化
+<script>
+    ;
+var modulea=(function(){
+        var obj={};
+        var name='zhulei';
+        obj.name=name;
+        return obj
+    })()
+</script>
+<scritp>
+    console.log(obj.name)
+</scritp>
+
+
+
+commonJs模块化导出：
+<script>
+    var obj={};
+    var name='zhulei';
+    obj.name=name;
+    module.export={
+        name:name;
+        obj:obj;
+    }
+</script>
+
+commonJs模块化导入：
+<script>
+var aaa=require('aaa.js')
+var {name,obj}=require('aaa.js')
+</script>
+</body>
+</html>

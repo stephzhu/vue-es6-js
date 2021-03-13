@@ -1,0 +1,58 @@
+<!--
+ * @Author: your name
+ * @Date: 2021-02-23 10:19:40
+ * @LastEditTime: 2021-02-24 22:30:06
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: \Vue\Vue\08-阶段案例-（图书购物车）\index.htm
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+        <div v-if="this.books.length ">
+            <table>
+
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th>书籍名称</th>
+                        <th>出版日期</th>
+                        <th>价格</th>
+                        <th>购买数量</th>
+                        <th>操作</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr v-for="(item,index) in books">
+                        <td>{{item.id}}</td>
+                        <td>{{item.name}}</td>
+                        <td>{{item.date}}</td>
+                        <td>{{item.price | getFilter()}}</td>
+                        <td><button @click="descream(index)" v-bind:disabled="item.court <= 1">-</button>
+                            {{item.court}}<button @click="incream(index)">+</button></td>
+                        <td><button @click="removeCar(index)">移除</button></td>
+                    </tr>
+                </tbody>
+            </table>
+            <h3>
+                总价格：{{totalPrice | getFilter()}}
+            </h1>
+        </div>
+        <div v-else>
+            购物车为空
+        </div>
+    </div>
+    <script src="../../vue.js"></script>
+    <script src="../08（图书购物车）-阶段案例/main.js"></script>
+</body>
+
+</html>

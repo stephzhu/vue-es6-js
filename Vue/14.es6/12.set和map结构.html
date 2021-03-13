@@ -1,0 +1,62 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <title>set和map结构</title>
+    <meta charset="UTF-8">
+</head>
+<body>
+
+Set数据结构类似于数组，值是不重复的
+对象只接受字符串作为键名,Map数据结构“键”的范围不限于字符串，各种类型的值（包括对象）都可以当作键
+
+
+js
+map方法通过对数组元素做批量操作
+filter方法通过函数过滤符合条件的元素
+reduce方法通过函数计算数组总和
+<script>
+    // const set=new Set([1,4,2,5,7]);
+    // var arr=[1,4,2,5,7]
+    // arr.sort().reverse()
+    // console.log(set.size);
+    // console.log(arr);
+    //
+    // [1,4,2,5,7,33,35].forEach(function(item,index){
+    //     set.add(item)
+    //     console.log(index);
+    // })
+    // console.log(set);
+
+    var arr = [1, 4, 2, 5, 7]
+
+    function map(x) {
+        x = x * 2
+        return x
+    }
+
+    arr.map(map)
+    console.log(arr.map(map));
+    console.log('--------map------------');
+    var arr1 = [22, 4, 23, 4, 7]
+
+    function getage(age) {
+        return age > 7
+    }
+
+    console.log(arr1.filter(getage));
+
+    console.log('--------filter------------');
+    var arr2 = [22, 4, 23, 4, 7]
+
+    function reduce(total, num) {
+        return total + num
+    }
+
+    console.log(arr2.reduce(reduce))
+
+</script>
+
+
+</body>
+</html>

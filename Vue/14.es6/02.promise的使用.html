@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<p>promise将异步请求和业务逻辑分开，
+    更加优雅的表达异步方式---链式编程
+</p>
+<script>
+
+    //回调地狱方式
+    setTimeout(() => {
+        console.log('定时器函数');
+        console.log('hi4!');
+        console.log('----');
+        setTimeout(() => {
+
+            console.log('hi5!');
+            console.log('----');
+            setTimeout(() => {
+
+                console.log('hi6!');
+                console.log('----');
+            }, 1000)
+        }, 1000)
+
+    }, 4000)
+
+
+    new Promise((resolve, reject) => {
+
+        //异步操作,类似网络请求
+        setTimeout(() => {
+            //成功时调取resolve
+            resolve()
+
+        }, 1000)
+    }).then(() => {
+        //结果处理
+        console.log('hi1!');
+        console.log('----');
+
+
+        return new Promise((resolve, reject) => {
+            //异步操作,类似网络请求
+            setTimeout(() => {
+                resolve()
+            }, 1000)
+
+        })
+    }).then(() => {
+        console.log('hi2!');
+        console.log('----');
+
+        return new Promise((resolve, reject) => {
+
+            //异步操作
+            setTimeout(() => {
+                resolve()
+                //失败时调取reject
+                // reject();
+
+            }, 1000)
+
+        })
+
+
+    }).then(() => {
+        console.log('hi3!');
+        console.log('----');
+    })
+
+
+    //
+</script>
+</body>
+</html>

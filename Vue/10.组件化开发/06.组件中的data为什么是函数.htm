@@ -1,0 +1,106 @@
+<!--
+ * @Author: your name
+ * @Date: 2021-02-26 11:11:33
+ * @LastEditTime: 2021-02-26 14:17:19
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: \Vue\Vue\10.组件化\03.组件语法糖注册方式.htm
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+        <!-- <mydiv></mydiv> -->
+        <mydiv1></mydiv1>
+        <hr>
+        <mydiv1></mydiv1>
+        <hr>
+        <mydiv1></mydiv1>
+    </div>
+    <template id="mydiv1">
+
+        <div>
+            当前计数：{{court}}
+            <button @click="add">加</button>
+            <button @click="incr">减</button>
+        </div>
+    </template>
+    <!-- 1.js写法，类型必须是text-template -->
+    <!-- <script type="text/x-template" id="mydiv">
+
+        <div>{{title}}</div>
+    </script> -->
+
+    <!-- 2.<template>写法 -->
+
+
+    <script src="../../vue.js"></script>
+    <script>
+        // 函数多次调用会产生多个实例对象，不会相互影响
+        function abc(name, age) {
+            return {
+                name: name,
+                age: age,
+            }
+        }
+        var obj1 = abc('zhulei', 19);
+        var obj2 = abc('niena', 20);
+        console.log(obj1.name)      //返回zhulei
+        console.log(obj2.name)      //返回niena
+
+        // 对象为指针，指向内存地址，会导致复用组件，操作时同步操作
+        var bcd = {
+            return: {
+                name: name,
+                // age: age,  
+            }
+        }
+        var obj3 = bcd;
+        var obj4 = bcd;
+        obj3.name = 'kobi';
+        console.log(obj3.name)      //返回zhulei
+        console.log(obj4.name)      //返回niena
+
+        //    data属性必须为函数，函数多次调用会产生自己的实例对象， 否则报错，
+        //    若为对象，对象为指针，会导致引用的组件
+
+        const obj = {
+            court:0
+        }
+        Vue.component('mydiv1', {
+            template: '#mydiv1',
+            // data() {
+            //     return {
+            //         court: 0,
+            //     }
+            // },
+            data() {
+                return obj
+            },
+            methods: {
+                add() {
+                    this.court++;
+                },
+                incr() {
+                    this.court--;
+                }
+            },
+        })
+        const app = new Vue({
+            el: '#app',
+
+        })
+
+
+    </script>
+</body>
+
+</html>

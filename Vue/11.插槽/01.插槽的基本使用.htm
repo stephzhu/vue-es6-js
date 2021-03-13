@@ -1,0 +1,68 @@
+<!--
+ * @Author: zhulei
+ * @Date: 2021-02-17 15:39:04
+ * @LastEditTime: 2021-02-27 22:22:27
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: \Vue\第一天\01.vue初体验.htm
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- 声明式编程 -->
+    <div id="app">
+        <cpn>
+        </cpn>
+        <cpn><span>哈哈哈</span></cpn>
+        <cpn><span>呵呵呵</span></cpn>
+    </div>
+    <template id="slot">
+        <div>
+             我是子组件
+             <slot>
+                 
+                <button>默认值</button>
+            
+            </slot>
+            <hr>
+        </div>
+    </template>
+    <script src="../../vue.js"></script>
+    <script>
+        // 语法糖：简写
+        const app = new Vue(
+            {
+                el: '#app',
+                data: {
+                    count: 0,
+                },
+                methods: {
+
+                },
+                components: {
+                    cpn: {
+                        template: '#slot',
+                        data() {
+                            return {
+
+                            }
+                        }
+                    }
+
+
+                }
+            }
+        )
+
+    </script>
+</body>
+
+</html>

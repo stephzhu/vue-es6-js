@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DOM</title>
+</head>
+<body>
+<ul id="ul" class="ul ul-p">
+    <li><a href="#">1</a></li>
+    <li><a href="#">2</a></li>
+    <li><a href="#">3</a></li>
+    <li><a href="#">4</a></li>
+</ul>
+
+<p>5</p>
+<a>5</a>
+<script>
+
+    //DOM基点方法
+    var ul = document.getElementsByTagName('ul')[0];
+    // console.log(ul.childNodes);
+    // console.log(ul.firstChild);
+    // console.log(ul.lastChild);
+    // console.log(ul.firstChild.nextSibling.previousSibling.parentNode);
+    // console.log(ul.nodeName);
+    // var p=document.getElementsByTagName('p')[0];
+    // console.log(ul.appendChild(p));
+    // console.log(ul.insertBefore(p,ul.firstChild));
+    // var a=document.getElementsByTagName('a')[0];
+    // console.log(ul.replaceChild(a,ul.firstChild.nextSibling));
+    //
+    //
+    // console.log(ul.removeChild(ul.firstChild));
+    //
+    // console.log(window);
+    console.log(document.domain);
+    console.log(document.URL);
+    console.log(document.referrer);
+    console.log(document.getElementsByTagName('*'));
+    var UL = document.getElementById('ul')
+    console.log(ul.id);
+    console.log(ul.className);
+
+    var div = document.createElement('DIV');
+    // var html = '<div>' +
+    //     '<p>222</p>' +
+    //     '</div>'
+
+    ul.appendChild(div)
+    div.innerText='111'
+    // div.innerHTML='222'
+    var div1=document.createTextNode('HELLO !')
+
+
+    div.appendChild(div1)
+    console.log(div.nodeValue);
+
+</script>
+</body>
+</html>

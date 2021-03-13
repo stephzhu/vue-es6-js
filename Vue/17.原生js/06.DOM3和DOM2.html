@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>dom</title>
+    <style>
+        #box{
+            width: 200px;
+            height: 200px;
+            margin: 100px auto;
+            background: antiquewhite;
+        }
+        #smbox{
+            width: 100px;
+            height: 100px;
+            background: red;
+            margin: 0 auto;
+            padding: 10px;
+            border: 1px solid blue;
+        }
+    </style>
+</head>
+<body>
+<div id="box">
+    <div id="smbox"></div>
+</div>
+<script>
+var width=document.getElementById('#smbox').offsetLeft;
+console.log(width);
+
+</script>
+</body>
+</html>

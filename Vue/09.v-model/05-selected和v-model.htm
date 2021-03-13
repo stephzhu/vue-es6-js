@@ -1,0 +1,50 @@
+<!--
+ * @Author: your name
+ * @Date: 2021-02-25 15:46:40
+ * @LastEditTime: 2021-02-25 16:48:27
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: \Vue\Vue\09.v-model.htm\01.v-model基本使用.htm
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <dic id="app">
+       <select name="select" id="" v-model="fruit">
+           <option value="苹果">苹果</option>
+           <option value="香蕉">香蕉</option>
+           <option value="火龙果">火龙果</option>
+           <option value="榴莲">榴莲</option>
+       </select>
+       <h3>您选择的水果是：{{fruit}}</h3>
+
+       <hr>
+       <select name="select" id="" v-model="shuog" multiple>
+        <option value="苹果">苹果</option>
+        <option value="香蕉">香蕉</option>
+        <option value="火龙果">火龙果</option>
+        <option value="榴莲">榴莲</option>
+    </select>
+        <h3>您选择的水果是：{{shuog}}</h3>
+  
+    </dic>
+    <script src="../../vue.js"></script>
+    <script>
+        const app=new Vue({
+            el:'#app',
+            data:{
+                message:'你好',
+                fruit:'香蕉',
+                shuog:[],
+            },
+          
+        })
+    </script>
+</body>
+</html>

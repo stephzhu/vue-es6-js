@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+函数：实现功能的工具
+所有的函数都是对象的方法
+
+
+
+万物皆对象
+对象：是工具包，类似图书馆，对图书进行分类管理
+实现分类管理
+String
+Date
+
+封装性：只需要知道怎么使用，不需要在乎细节
+
+框架：多个对象（工具包）
+
+
+
+
+
+
+
+<script>
+    // 'use strict'
+    // var person = new Object(name);
+    // person.name = 'nie'
+    // Object.defineProperty(person, name, {
+    //     writable: false,
+    //     value: "zhu",
+    //     configurable: false,
+    //     enumerable: true
+    // })
+    // delete person.name
+    // console.log(person.name);
+
+
+    // var obj=new Object()
+    // obj.name='zhu'
+    // console.log(obj);
+    // console.log(obj.constructor.length);
+
+    // var person=new Object()
+    // person.name='zhu';
+    // console.log(person);
+    // console.log(person.constructor.name);
+    //
+    // //指向构造函数的原型对象
+    // console.log(person.__proto__);
+    // console.log(person.prototype);    //undefined
+    // console.log(person.getPrototypeOf());
+    function Person(name){
+        this.name=name;
+    }
+    var person1=new Person('zhu')
+    console.log('-------实例对象-------');
+    console.log(person1);
+    console.log('-------原型对象-------');
+
+    console.log(person1.__proto__);
+    console.log(Person.prototype);
+
+    // console.log(Person);
+    console.log(window.innerWidth);
+</script>
+</body>
+</html>

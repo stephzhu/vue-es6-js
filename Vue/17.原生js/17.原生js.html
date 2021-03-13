@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>原生js</title>
+
+    <script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+</head>
+
+
+<body>
+<script>
+$.ajax({
+    url:'./package.json',
+    dataType:'json',
+
+    success(data){
+        console.log(data.name);
+    },
+    error(e){
+        console.log(e);
+    }
+})
+</script>
+</body>
+</html>

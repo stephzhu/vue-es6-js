@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // new Promise((resolve, reject) => {
+    //     setTimeout(() => {
+    //
+    //         // resolve('resolved')
+    //         reject('rejected')
+    //     }, 1000)
+    // }).then((data) => {
+    //
+    //     console.log(data);
+    // }, (err) => {
+    //     console.log(err);
+    // })
+
+    //promise简写方式
+    new Promise((resolve, reject) => {
+
+        //异步操作,类似网络请求
+        return Promise.resolve(setTimeout(() => {
+            console.log('hi1!');
+            console.log('----');
+        }, 1000))
+    }).then(() => {
+        //结果处理
+
+        return Promise.resolve(setTimeout(() => {
+            console.log('hi2!');
+            console.log('----');
+        }, 1000))
+    }).then(() => {
+
+        return Promise.resolve(setTimeout(() => {
+            console.log('hi3!');
+            console.log('----');
+        }, 1000))
+
+    }).catch((err)=>{
+        console.log(err);
+    })
+
+</script>
+</body>
+</html>

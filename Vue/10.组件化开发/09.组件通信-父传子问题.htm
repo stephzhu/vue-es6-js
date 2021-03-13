@@ -1,0 +1,72 @@
+<!--
+ * @Author: your name
+ * @Date: 2021-02-27 09:36:52
+ * @LastEditTime: 2021-02-27 10:37:10
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: \Vue\Vue\10.组件化\08.父组件向子组件传递.htm
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+        <cpn v-bind:cmovies="movies" v-bind:cmessage="message"></cpn>
+        <!-- 不添加v-bind时显示props默认值 -->
+    </div>
+    <template id="temp">
+        <div>
+            <h1>
+                {{cmovies}}
+                <ul>
+                    <li v-for="item in cmovies">{{item}}</li>
+                </ul>
+            </h1>
+
+            
+            <p>不添加v-bind时显示props默认值:{{cmessage}}</p>
+        </div>
+    </template>
+    <script src="../../vue.js"></script>
+    <script>
+        const cpn = {
+            template: '#temp',
+            // 1.变量名
+            // props: ['cmovies', 'cmessage'],
+            props: {
+                // 2.类型限制
+                cmovies: Array,
+                // cmessage: String,
+                // 3.添加默认值以及必传值
+                cmessage: {
+                    type: String,
+                    default: 'aaaa',
+                    required: true,
+                   }
+
+                },
+                data() {
+                    return {}
+                },
+            }
+        const app = new Vue({
+                el: '#app',
+                data: {
+                    movies: ['海王', '海尔兄弟', '海贼王'],
+                    message: '你好'
+                },
+                components: {
+                    cpn
+                },
+            })
+    </script>
+</body>
+
+</html>

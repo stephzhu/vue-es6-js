@@ -1,0 +1,50 @@
+<!--
+ * @Author: your name
+ * @Date: 2021-02-19 09:54:52
+ * @LastEditTime: 2021-02-19 10:18:51
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: \Vue\第一天\第二天\01.计算属性的setter和getter.htm
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+        <h1>{{fullname}}</h1>
+    </div>
+    <script src="../../vue.js"></script>
+    <script>
+        //计算属性是根据set和get方法实现的
+        //调取多次时，计算属性只调取一次，会产生缓存
+        //methods会调取多次
+        const app = new Vue({
+            el: '#app',
+            data: {
+                firstname: 'zhu',
+                lastname: 'lei',
+                value:"lebron james"
+            },
+            computed: {
+               
+                fullname: {
+                    set: function (vlaue) {
+           
+                    },
+                    get: function () {
+                        return this.firstname + this.lastname;
+                    }
+                }
+            },
+        })
+    </script>
+</body>
+
+</html>

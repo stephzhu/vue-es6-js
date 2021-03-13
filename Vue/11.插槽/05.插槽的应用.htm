@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<div id="app">
+<cpn></cpn>
+    <cpn>
+<!--        获取子组件中的数据-->
+<template slot-scope="slot">
+
+    <p>{{slot.data.join(' + ')}}</p>
+</template>
+    </cpn>
+<!--    <cpn>-->
+<!--        &lt;!&ndash;        获取子组件中的数据&ndash;&gt;-->
+<!--        <template slot-scope="slot">-->
+
+<!--            <p>{{slot.data.join(' & ')}}</p>-->
+<!--        </template>-->
+<!--    </cpn>-->
+</div>
+<template id="cpn">
+    <div>
+        <slot :data="plat">
+        <ul>
+            <li v-for="item in plat">{{item}}</li>
+        </ul>
+        </slot>
+    </div>
+</template>
+<script src="../../vue.js"></script>
+<script >
+
+
+// 语法糖：简写
+const app = new Vue(
+    {
+        el: '#app',
+        data: {
+            isShow:true,
+        },
+
+        components: {
+            cpn: {
+                template: '#cpn',
+                data() {
+                    return {
+                        isShow:false,
+                        plat:['pthon','php','js','java','c++']
+                    }
+                }
+            }
+
+
+        }
+    }
+)
+
+</script>
+</body>
+</html>

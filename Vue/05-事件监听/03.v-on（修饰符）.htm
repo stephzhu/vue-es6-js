@@ -1,0 +1,80 @@
+<!--
+ * @Author: your name
+ * @Date: 2021-02-19 15:57:35
+ * @LastEditTime: 2021-02-22 18:49:11
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: \Vue\第一天\第二天\03.v-on.htm
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+        没有参数时不用传值，默认获取event对象，多参数时event用$event
+        <button @click="getfirst">点击1</button>
+        <button @click="getfirst(123,$event)">点击2</button>
+        <hr>
+        <div class="div" @click="divclick">
+            修饰符：stop，阻止时间冒泡
+            <button class="btn" @click.stop="btnclick">
+                按钮
+            </button>
+        </div>
+        <hr>
+        <div class="div" @click="divclick">
+            修饰符：stop，阻止时间冒泡
+            <button class="btn" @click.stop="btnclick">
+                按钮
+            </button>
+        </div>
+        <form action="1.php" method="post" @click.prevent="formclick">
+            <input type="submit" name="" id="" value="提交">
+        </form>
+        <hr>
+        <input type="text" name="" id="" @keyup.enter="keyup">
+        <hr>
+        <input type="text" name="" id="" @keyup.once="keydown">
+    </div>
+    <script src="../../vue.js"></script>
+    <script>
+        const app = new Vue({
+            el: '#app',
+            data: {
+
+            },
+            methods: {
+                getfirst(event) {
+                    console.log(event)
+                },
+                getfirst(name, event) {
+                    console.log(name)
+                },
+                divclick() {
+                    console.log('您点击了div')
+                },
+                btnclick() {
+                    console.log('您点击了btn')
+                },
+                formclick() {
+                    console.log('阻止表单默认提交')
+                },
+                keyup(){
+                    console.log('您按下了enter键')
+                },
+                keydown(){
+                    console.log('只执行一次')
+                }
+            },
+        })
+    </script>
+</body>
+
+</html>

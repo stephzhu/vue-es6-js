@@ -1,0 +1,54 @@
+<!--
+ * @Author: zhulei
+ * @Date: 2021-02-22 21:04:57
+ * @LastEditTime: 2021-02-22 23:40:53
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: \Vue\第一天\第二天\05.用户登录案例.htm
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div id="app">
+        key高效的更新dom
+       <ul>
+           <li v-for="(item,index) in movies" :key="item">{{index+1}}-{{item}}</li>
+       </ul>
+       <hr>
+       <ul>
+           item获取的是value
+        <li v-for="(value,key) in info">{{value}}-{{key}}</li>
+    </ul>
+<hr>
+    <ul>
+        item获取的是value
+     <li v-for="(value,key,index) in info">{{value}}-{{key}}-{{index}}</li>
+ </ul>
+    </div>
+    <script src="../../vue.js"></script>
+    <script>
+        const app = new Vue({
+            el: '#app',
+            data: {
+                message: '你好',
+                movies:['海贼王','进击的巨人','火影忍者'],
+                info:{
+                    name:'zhulei',
+                    age:18,
+                    height:1.88
+                }
+            },
+        })
+    </script>
+</body>
+
+</html>

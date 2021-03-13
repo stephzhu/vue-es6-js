@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    var tmp = new Date();
+    var tmp;
+    function f() {
+        console.log(tmp);
+        var tmp;
+        console.log(tmp);
+        if (false) {
+          tmp = 'hello world';
+            console.log(tmp);
+        }
+    }
+
+    f(); // undefined
+    //
+    // var name='zhulei';
+    // var name;
+    // console.log(name)
+</script>
+</body>
+</html>

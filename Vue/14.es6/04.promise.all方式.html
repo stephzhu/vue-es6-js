@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<p>promise.all方法处理多次网络请求</p>
+<script>
+    Promise.all([() => {
+        new promise((resolve, reject) => {
+
+            setTimeout(() => {
+                resolve({name: 'niena', age: 18});
+            }, 5000)
+
+        })
+
+
+    }, () => {
+        new promise((resolve, reject) => {
+
+            setTimeout(() => {
+                resolve({name: 'zhulei', age: 18});
+            }, 2000)
+
+        })
+
+    }]).then((data) => {
+        console.log(data);
+    })
+</script>
+</body>
+</html>

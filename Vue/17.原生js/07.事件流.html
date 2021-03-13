@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>事件流</title>
+</head>
+<body>
+<div>
+    父元素
+    <a href="">a链接</a>
+    <button>
+        子元素点我
+    </button>
+
+    <ul>
+        <li><a href="" id="a">网站首页
+            <ul style="display: none">
+                <li><a href="">111</a></li>
+                <li><a href="">111</a></li>
+                <li><a href="">111</a></li>
+            </ul>
+        </a>
+
+        </li>
+    </ul>
+</div>
+
+<input type="text" autocomplete="true" autofocus>
+<script>
+    var div = document.getElementsByTagName('div')[0];
+    var btn = document.getElementsByTagName('button')[0];
+
+    btn.addEventListener('click', function () {
+            console.log('我是btn');
+            event.stopPropagation()      //组织冒泡
+        }
+    )
+
+    div.addEventListener('click', function () {
+            console.log('我是div');
+
+
+        }
+    )
+    var a = document.getElementsByTagName('a')[0];
+    // a.addEventListener('click', function () {
+    //         event.preventDefault()
+    //     }
+    // )
+    // var a = document.getElementById('a')
+    var a = document.getElementsByTagName('a')[1];
+    var ul = document.getElementsByTagName('ul')[1];
+    a.addEventListener('mouseover', function () {
+        ul.style.display = "block"
+    })
+    a.addEventListener('mouseout', function () {
+        // event.stopPropagation()      //组织冒泡
+        ul.style.display = "none"
+
+    })
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!--
+ * @Author: zhulei
+ * @Date: 2021-02-22 18:29:44
+ * @LastEditTime: 2021-02-22 19:33:20
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: \Vue\第一天\第二天\04.v-on.htm
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+         <h1 v-if="score >=90">优秀</h1>
+         <h1 v-else-if="score >=80">良</h1>
+         <h1 v-else-if="score >=60">合格</h1>
+         <h1 v-else="score <60">不合格</h1>
+       
+    </div>
+    <script src="../../vue.js"></script>
+    <script>
+        const app = new Vue({
+            el: '#app',
+            data: {
+                score: 50,
+            }
+        })
+    </script>
+</body>
+
+</html>

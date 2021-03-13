@@ -1,0 +1,73 @@
+<!--
+ * @Author: your name
+ * @Date: 2021-02-27 09:36:52
+ * @LastEditTime: 2021-02-27 16:26:18
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: \Vue\Vue\10.组件化\08.父组件向子组件传递.htm
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+    <!-- 自定义事件 -->
+        <cpn @zclick="cpnclick"></cpn>
+        <!-- 不添加v-bind时显示props默认值 -->
+    </div>
+    <template id="temp">
+        <div>
+            <button v-for="item in movies" @click="moclick(item)">{{item.name}}</button>
+
+        </div>
+    </template>
+    <script src="../../vue.js"></script>
+    <script>
+        const cpn = {
+            template: '#temp',
+            props: {
+
+            },
+            data() {
+                return {
+                    movies:[
+                        {name:'海王',age:18},
+                        {name:'海尔兄弟',age:12},
+                        {name:'海贼王',age:28},
+                    ]
+                    
+                    // ['海王', '海尔兄弟', '海贼王'],
+                }
+            },
+            methods: {
+                moclick(item) {
+                    //发射事件给主体
+                    this.$emit('zclick', item)
+                }
+            },
+        }
+        const app = new Vue({
+            el: '#app',
+            data: {
+                message: '你好'
+            },
+            components: {
+                cpn
+            },
+            methods: {
+                cpnclick(item) {
+                    console.log('cpnclick',item)
+                }
+            },
+        })
+    </script>
+</body>
+
+</html>
