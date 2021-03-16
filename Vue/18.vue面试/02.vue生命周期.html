@@ -1,0 +1,78 @@
+<!--
+@name: zhulei
+@description:zhulei,stephzhu
+@author: zhulei
+@time: 2021-03-16 18:43:20
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+    {{message}}
+    {{message}}
+    {{getMessage}}
+</div>
+<script src="../../vue.js"></script>
+
+
+<script>
+
+    var app = new Vue({
+        el: '#app',
+        data() {
+            return {
+                message: '你好'
+            }
+        },
+        beforeCreate() {
+            //实例创建之前，数据还未挂载
+            console.log('创建之前');
+            // console.log(this.message);         //undefined
+        },
+        create() {
+            console.log('实例创建之后');
+            // console.log(this.message);
+        },
+        beforeMount() {
+            //虚拟dom挂载完成
+            // this.message="还行"
+            // console.log(this.message);
+            console.log('虚拟dom挂载完成')
+        },
+        mounted() {
+            //页面、数据、dom挂载完成
+            console.log('页面、数据、dom挂载完成');
+        },
+        beforeUpadate() {
+            // this.message = "还行"            //
+            console.log('重新渲染之前触发');
+        },
+        updated() {
+            // this.message = "还行"              //
+            console.log('重新更新完成');
+        },
+        beforeDestory() {
+            console.log('销毁之前');
+        },
+        destoryed() {
+            console.log('销毁之后');
+        },
+        computed:{
+            getMessage:function f() {
+                this.message='你真行！'
+            }
+        },
+        // method() {
+        //      getMessage:function f() {
+        //              this.message='你真行！'
+        //      }
+        // }
+    })
+
+</script>
+</body>
+</html>

@@ -1,0 +1,103 @@
+<!--
+@name: zhulei
+@description:zhulei,stephzhu
+@author: zhulei
+@time: 2021-03-16 15:47:44
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+    {{message}}
+
+</div>
+<script src="../../vue.js"></script>
+
+<script>
+    // 1.修改数据之后如何在视图监听到数据的改变
+    // object.defineProperty()监听数据属性的变化
+
+    //2.数据发送改变时，如何通知那些数据进行改变、数据发送改变
+    // 发布订阅者模式
+    var obj = {
+        message: '你好'
+    }
+    // var object = {}
+
+
+    Object.keys(obj).forEach(key => {
+        let value = obj[key];
+        Object.defineProperty(obj, key, {
+            set(v) {
+               //监听属性的变化
+                console.log('监听' + key);
+                //根据解析html, 获取到哪些人在使用这些属性
+                return v;
+            },
+            get(v) {
+                console.log('获取' + key);
+
+                return v;
+            }
+        })
+    })
+
+    //发布者订阅者模式
+
+    //存储改变的属性
+    //发布者
+    class dep {
+        constructor() {
+            //记录所有订阅者
+            this.sub = [];
+        }
+        //添加订阅者
+        addsub(watch) {
+            this.sub .push(watch);
+        }
+        notify(){
+            this.sub.forEach((item)=>{
+               item.update()
+            })
+        }
+    }
+
+    //监听观察：订阅者
+    class watch {
+        constructor(name) {
+            this.name = name
+        }
+
+        update() {
+            console.log(this.name + 'updated');
+        }
+    }
+
+    var dep1 = new dep();
+    const w1=new watch('张三')
+    dep1.addsub(w1)
+    const w2=new watch('李四')
+    dep1.addsub(w2)
+    const w3=new watch('王五')
+    dep1.addsub(w3)
+    dep1.notify()
+</script>
+<script>
+
+
+    var Vue = new Vue({
+        el: '#app',
+        data() {
+            return {
+                message: '你好'
+            }
+        }
+    })
+
+</script>
+</body>
+</html>

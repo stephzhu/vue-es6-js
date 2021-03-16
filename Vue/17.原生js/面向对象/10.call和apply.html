@@ -1,0 +1,30 @@
+<!--
+@name: zhulei
+@description:zhulei,stephzhu
+@author: zhulei
+@time: 2021-03-14 22:35:05
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+call可以借用属性和方法
+可以更改this的指针
+<script>
+    function add() {
+        var value=10
+        return this.value;
+    }
+
+    function ins() {
+        var value=12
+        return this.value;
+    }
+    var dt=add.call(ins)
+    console.log(dt.value);
+</script>
+</body>
+</html>

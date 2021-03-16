@@ -1,0 +1,37 @@
+<!--
+@name: zhulei
+@description:zhulei,stephzhu
+@author: zhulei
+@time: 2021-03-14 20:04:58
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<p>实例化的本质是实例的拷贝原理，将构造函数中的属性拷贝一份,不会拷贝原型对象上的属性</p>
+属性搜索机制
+
+<script>
+function Foo() {
+    //私有属性
+  this.name='niena';
+  this.get=function () {
+
+  }
+}
+Foo.prototype={
+    //公有属性
+    name:'zhu'
+}
+var prod=new Foo();
+console.log(prod);             //Foo    {name='niena',_proto_}
+console.log(Foo.prototype);
+
+
+</script>
+</body>
+</html>
