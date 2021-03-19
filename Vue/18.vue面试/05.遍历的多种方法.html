@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // for方法
+    var arr = [{id: 1}, {id: 3}, {id: 5}];
+    var arrNull = [];
+    var str = '12355';
+    var str1 = str.split('');         //数组
+    var arr2 = [];
+    for (var i = 0; i < arr.length; i++) {
+        arrNull.push(arr[i].id);
+        for (var j = 0; j < str.length; j++) {
+            if (str[j] == arrNull[i]) {
+                arr2.push(str[j]);
+            }
+        }
+    }
+    console.log(arr2);
+    console.log('———————for in———————.')
+    //for in
+    var arr3 = ['peter', 'kebe', 'jewe'];
+    for (let key in arr3) {
+        console.log(key);         //0 1 3
+        console.log(arr3[key]);   //'peter', 'kebe', 'jewe'
+
+    }
+
+    // const object = {
+    //     name: 'Peter',
+    //     age: 12,
+    //     isHuman: true
+    // };
+    // for (let key in object) {
+    //     console.log(key + '---' + object[key]);
+    // }
+    console.log('———————for of———————.')
+
+
+    //for of
+    for (let key of arr3) {
+        console.log(key);         // 'peter', 'kebe', 'jewe'
+    }
+    console.log('———————forEach———————.')
+   //forEach
+    arr3.forEach = (function(item) {
+        console.log(item);
+    })
+    const info = [
+        {id: 1000, name: 'zhangsan'},
+        {id: 1001, name: 'lisi'},
+        {id: 1002, name: 'wangwu'}
+    ]
+    arr3.forEach( function(item) {
+        console.log(item.id + '---' + item.name);
+    })
+</script>
+</body>
+</html>
