@@ -13,8 +13,9 @@
 <body>
 <div id="app">
     {{message}}
+
     {{message}}
-    {{getMessage}}
+    <button @click="getMessage">点击</button>
 </div>
 <script src="../../vue.js"></script>
 
@@ -29,48 +30,49 @@
             }
         },
         beforeCreate() {
+            // 用处：加载动画
             //实例创建之前，数据还未挂载
-            console.log('创建之前');
+            alert('创建之前');
             // console.log(this.message);         //undefined
         },
         create() {
-            console.log('实例创建之后');
-            // console.log(this.message);
+            //请求借口
+            alert('实例创建之后');
         },
         beforeMount() {
             //虚拟dom挂载完成
             // this.message="还行"
-            // console.log(this.message);
-            console.log('虚拟dom挂载完成')
+            alert('虚拟dom挂载完成')
         },
         mounted() {
             //页面、数据、dom挂载完成
-            console.log('页面、数据、dom挂载完成');
+            alert('页面、数据、dom挂载完成');
         },
         beforeUpadate() {
             // this.message = "还行"            //
-            console.log('重新渲染之前触发');
+            alert('重新渲染之前触发');
         },
         updated() {
             // this.message = "还行"              //
-            console.log('重新更新完成');
+            alert('重新更新完成');
         },
         beforeDestory() {
-            console.log('销毁之前');
+            alert('销毁之前');
         },
         destoryed() {
-            console.log('销毁之后');
+            alert('销毁之后');
         },
-        computed:{
-            getMessage:function f() {
-                this.message='你真行！'
+        // computed: {
+        //     getMessage: function f() {
+        //         this.message = '你真行！'
+        //     }
+        // },
+        methods: {
+            getMessage() {
+                this.message = '你真行！'
             }
+
         },
-        // method() {
-        //      getMessage:function f() {
-        //              this.message='你真行！'
-        //      }
-        // }
     })
 
 </script>

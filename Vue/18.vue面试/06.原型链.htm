@@ -1,0 +1,53 @@
+<!--
+ * @Author: your name
+ * @Date: 2021-03-20 16:36:00
+ * @LastEditTime: 2021-03-20 17:18:16
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: \vue、es6、js\Vue\18.vue面试\06.原型链.htm
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>面向对象的三个作用：封装性、多态性、继承性</p>
+    <p>多态：不同图形计算面积</p>
+    <p>重载：jquery的获取和赋值（获取属性值和修改属性值）</p>
+    <script>
+        function Parent(name,price){
+            this.name=name;
+            this.price=price;
+        }
+        Parent.prototype={
+            getP(){
+                console.log(this.name);
+            }
+         
+        }
+        function Child(dep){
+            Parent.call(this,arguments);
+            this.dep=''
+        }
+        Child.prototype=new Parent();
+
+        Child.prototype={
+            getC(){
+                console.log (this.dep)  
+            }
+        }
+
+        var c1=new Child();
+        c1.name='zhulei';
+        c1.dep='棒棒的！';
+        c1.price=225;
+        c1.getC();
+        
+
+    </script>
+</body>
+</html>

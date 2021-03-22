@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>mvvm</title>
+</head>
+<body>
+<p>MVVM:</p>
+<p>
+    M：数据层
+    V：视图层
+    VM:数据层和视图层的纽带，通过数据绑定实现model到view的实时更新，
+
+    通过事件监听实现view到model的更新
+</p>
+<div id="app">
+    {{message}}
+</div>
+<script src="../../vue.js"></script>
+<script>
+
+    var app = new Vue({
+        // el: '#app',
+        data() {
+            return {
+                message: '你好'
+            }
+        }
+    })
+
+
+</script>
+</body>
+</html>
