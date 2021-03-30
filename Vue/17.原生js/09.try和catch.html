@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+</head>
+<body>
+<input id="input" type="text" >
+
+<button onclick="message()">点击</button>
+<div id="demo"></div>
+<script>
+    'use strict'
+    y=3;
+    console.log(y);
+    var x = 15 * 5;
+    debugger;
+    document.getElementById("demo").innerHTML = x;
+    function message() {
+        var value=input.value;
+        try {
+            if(value=='') throw '值为空'
+
+        }catch (e) {
+            alert(e)
+        }finally
+        {
+            input.value=''
+        }
+    }
+message()
+</script>
+</body>
+</html>

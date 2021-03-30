@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+    var str = ' i am a nnn! ';
+    str = str.replace(/\s*/g, "");
+    console.log('--' + str + '---');
+
+    var array = [];
+
+    function foo(arr) {
+        for (var i = 0; i < arr.length; i++) {
+            if (array.indexOf(arr[i]) === -1) {
+                array.push(arr[i])
+            }
+        }
+        return array
+    }
+
+    foo([1, 2, 3, 3, 44])
+
+</script>
+</body>
+</html>

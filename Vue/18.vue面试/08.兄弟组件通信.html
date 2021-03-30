@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+   {{a}}
+</div>
+
+<script src="../../vue.js"></script>
+
+
+<script>
+    // import input from './08.input'
+    // import list from './09.list'
+
+        const app = new Vue({
+            el: '#app',
+            // comments: {
+            //     list, input
+            // },
+            data(){
+                return{
+                    a:'1'
+                }
+            },
+            methods:{
+                get(){
+                    // var obj=object.assign(this.$data,this.$options.data())
+                    // console.log(this.$options.data());
+                    // console.log(obj);
+                    // this.$options.data().a=2
+                }
+            }
+
+        })
+
+</script>
+</body>
+</html>
