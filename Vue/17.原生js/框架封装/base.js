@@ -6,4 +6,4 @@ function Base(){
 }
 
 var Base=new Base();
-console.log(Base.getId('div').innerHTML);;
+// console.log(Base.getId('div').innerHTML);
